@@ -1,0 +1,6 @@
+training/football-field-detection-15
+training/football-players-detection-10
+
+*.env
+
+yolov8x.pt
