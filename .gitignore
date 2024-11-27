@@ -1,6 +1,10 @@
 training/football-field-detection-15
 training/football-players-detection-10
 
+notebooks/08fd33_4_result_1.mp4
+
 *.env
 
 yolov8x.pt
+
+videos/*
