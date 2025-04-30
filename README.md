@@ -23,7 +23,6 @@ This repository contains code to detect players in offside positions on soccer f
 - [Python3](https://www.python.org/downloads/)
 
 ### Steps to Install
-
 1. Clone Repository
 ```bash
 git clone https://github.com/JustinDosaj/cv-offside-detection.git
@@ -41,9 +40,11 @@ pip install
 5. Perform step 3 for `/notebooks/offside-video.ipynb`
 
 ### Running Detection
-
 1. Run single frame detection by navigating to `offsides.ipynb` and clicking run
 
 2. Run detection for entire video clip by navigating to `offside-video.ipynb` and clicking run
 
-
+## Known Limitations
+1. System struggles to detect every player if multiple players are grouped too close together but likely need multiple camera angles to make any significant improvement to this
+2. Team classification struggles on green & white jerseys due to the field color and lines. Reducing jersey color caluclation to only include upper half of body improved this slightly.
+3. Failure to detect all players results in imbalanced teams, which in effects identifying direction of play (required to determine teams offsensive and defensive halves). Manually balancing teams by cutting players from the larger team improved this, but can still result in false positives. 
