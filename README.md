@@ -33,7 +33,7 @@ git clone https://github.com/JustinDosaj/cv-offside-detection.git
 pip install
 ```
 
-3. Add `/video` folder SOURCE_VIDEO_PATH = "../videos/soccer_video_offside_2.mp4" and add a `<filename>.mp4` containing a soccer broadcast clip
+3. Due to copyright reasons, the video folder and files have been removed. You must add `/video` folder SOURCE_VIDEO_PATH = "../videos/soccer_video_offside_2.mp4" and add a `<filename>.mp4` containing a soccer broadcast clip
 
 4. Navigate to `/notebooks/offisdes.ipynb` and change `SOURCE_VIDEO_PATH` to your mp4 file path
 

@@ -14,8 +14,6 @@ SIGLIP_MODEL_PATH = 'google/siglip-base-patch16-224'
 
 
 # Generate batches from sequence
-# @Params: sequence<Iterable[V]>, batch_size<int>
-# @Return: Generator<List[V], none, none>
 def create_batches(sequence: Iterable[V], batch_size: int) -> Generator[List[V], None, None]:
 
     batch_size = max(batch_size, 1)
@@ -32,8 +30,6 @@ def create_batches(sequence: Iterable[V], batch_size: int) -> Generator[List[V],
 class TeamClassifier:
     
     # Intiliaze classifier
-    # @Params: device<str> = 'cpu' || 'cuda, batch_size<int>
-    # @Return: none
     def __init__(self, device: str = 'cpu', batch_size: int = 32):
 
         self.device = device
@@ -48,8 +44,6 @@ class TeamClassifier:
         self.cluster_model = KMeans(n_clusters=2)
 
     # Get features from list of cropped images
-    # @Params: crops<List[np.ndarray]>
-    # @Return: np.ndarray
     def extract_features(self, crops: List[np.ndarray]) -> np.ndarray:
 
         # Convert crops from openCV to pillow format
@@ -77,8 +71,6 @@ class TeamClassifier:
         return np.concatenate(data)
 
     # Reduce data to lower dimension and fit to clustering model
-    # @Params: crops<List[np.ndarray]>
-    # @Return: none
     def fit(self, crops: List[np.ndarray]) -> None:
 
         data = self.extract_features(crops)
@@ -86,8 +78,6 @@ class TeamClassifier:
         self.cluster_model.fit(projections)
 
     # Predict cluser labels for each image inside crops
-    # @Params: crops<List[np.ndarray]>
-    # @Return: np.ndarray
     def predict(self, crops: List[np.ndarray]) -> np.ndarray:
         
         if len(crops) == 0:
